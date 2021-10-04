@@ -22,8 +22,8 @@ func mapConfig() {
 	dbConfig = &DBConfig{
 		Server:   "localhost",
 		Port:     1433,
-		User:     "",
-		Password: "",
+		User:     "sa",
+		Password: "golangdb123456.",
 		DbName:   "WebTech",
 	}
 }
