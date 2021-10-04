@@ -7,6 +7,8 @@ import (
 	"webTech/configs"
 
 	"github.com/jinzhu/gorm"
+	//mssql
+	_ "github.com/jinzhu/gorm/dialects/mssql"
 )
 
 type DB struct {

@@ -7,3 +7,7 @@ type User struct {
 	Password  string
 	AddressID int
 }
+
+func UserTableName() string {
+	return "users"
+}

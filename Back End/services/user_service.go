@@ -1,9 +1,27 @@
 package services
 
-import "fmt"
+import (
+	"webTech/models/domains"
+	"webTech/repositories"
+)
 
-type UserService struct{}
+type IUserService interface {
+	CreateUser(user *domains.User) (*domains.User, error)
+}
 
-func (h *UserService) Hello() string {
-	return fmt.Sprintf("from service layer")
+type UserService struct {
+	userRepository repositories.IUserRepository
+}
+
+func NewUserService(
+	userRepository repositories.IUserRepository) IUserService {
+	return &UserService{
+		userRepository: userRepository,
+	}
+}
+
+func (that *UserService) CreateUser(user *domains.User) (*domains.User, error) {
+	//logical or business op
+	createdUser, err := that.userRepository.Create(user)
+	return nil, nil
 }
